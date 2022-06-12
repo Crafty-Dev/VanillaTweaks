@@ -1,0 +1,21 @@
+name: VanillaTweaks
+version: ${version}
+author: Crafty
+main: de.crafty.vanillatweaks.VanillaTweaks
+
+
+api-version: 1.18
+
+
+commands:
+  ping:
+    usage: /ping
+    description: Shows your ping!
+
+  playtime:
+    usage: /playtime <Player>
+    description: Playtime
+
+  invsee:
+    usage: /invsee <Player>
+    description: Invsee

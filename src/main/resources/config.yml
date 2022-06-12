@@ -1,0 +1,46 @@
+#Hint:
+#You can use formatting codes in every message entry
+
+#The message that is displayed whenever a player joins the server
+joinMsg: §b%PLAYER% §7joined the server
+
+#The message that is displayed whenever a player quits the server
+quitMsg: §b%PLAYER% §7left the server
+
+#The message format of player messages
+msg: §7<§b%PLAYER%§7> %MESSAGE%
+
+#When true, the player can harvest a crop by right clicking it
+simpleCropHarvest: false
+
+#When true, the player starts glowing for the specified amount of time
+glowOnGlowberry: false
+#Amount in seconds
+glowberryGlowTime: 5
+
+#When a player dies, a chest spawns at their death coordinates with their loot
+deathChests: false
+
+#When a player dies, they receive a message with their death coordinates
+deathCoords: false
+
+#Death Message color (Just a color code)
+deathMsgColor: §7
+#The name of the player displayed in the death message
+deathMsgPlayerName: §4%PLAYER%
+
+#Shows a + as prefix of the player name(Tab List)
+dimensionPrefix: true
+
+#Shows an items anvil uses in the anvil GUI
+anvilUses: true
+
+#Define custom names for players
+#By using a color code you probably overwrite some color codes specified in other message entries
+playerNames:
+  SamplePlayer: §4%PLAYER%
+
+#Define custom player list names (Tab List)
+#By using a color code you probably overwrite some color codes specified in other message entries
+playerListNames:
+  SamplePlayer: §7[§aCool§7] §a%PLAYER%
