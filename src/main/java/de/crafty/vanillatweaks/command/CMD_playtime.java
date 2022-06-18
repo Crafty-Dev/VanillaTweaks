@@ -6,9 +6,14 @@ import org.bukkit.Statistic;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
-public class CMD_playtime implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CMD_playtime implements TabExecutor {
 
 
     @Override
@@ -52,5 +57,27 @@ public class CMD_playtime implements CommandExecutor {
         float percentage = minutesLeft / 60.0F;
         return hours + "." + Math.round(percentage * 100) + " \u00a77Hours";
 
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
+        List<String> list = new ArrayList<>();
+
+        if(!(sender instanceof Player player))
+            return list;
+
+        if(!cmd.getName().equalsIgnoreCase("playtime"))
+            return list;
+
+        if(args.length == 1){
+            List<String> playerNames = new ArrayList<>();
+            for(OfflinePlayer p : Bukkit.getOfflinePlayers())
+                playerNames.add(p.getName());
+
+            list.addAll(playerNames.stream().filter(name -> name.toUpperCase().startsWith(args[0].toUpperCase())).toList());
+        }
+
+
+        return list;
     }
 }
